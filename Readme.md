@@ -97,27 +97,56 @@ Output variable (desired target):
 <img width="743" height="508" alt="image" src="https://github.com/user-attachments/assets/cb5b9af4-1913-41b2-8b0f-e4492e64154c" />
 <img width="1188" height="483" alt="image" src="https://github.com/user-attachments/assets/fda9c539-7ac8-4104-a32a-b40ddb255ce9" />
 
-### Sample Logistic Regression Model
-<img width="652" height="472" alt="image" src="https://github.com/user-attachments/assets/d73fba39-0041-4407-9764-e155fd99f201" />
+### Baseline Dummy Model
+<img width="792" height="531" alt="image" src="https://github.com/user-attachments/assets/0eefac6d-5ef9-4e9f-bae3-aa85690a6edc" />
 
 ## Observation
 
 | Result            | Score          | 
 |-------------------|----------------|
-| Accuracy          | 0.83539        |
-| precision_score   | 0.69623        |
-| recall_score      | 0.38820        |
-| f1_score          | 0.49847        |
+| Accuracy          | 0.789          |
+| precision_score   | 0.0            |
+| recall_score      | 0.0            |
+| f1_score          | 0.0            |
 
 1. Accuracy is high because of the data imbalance (most customers did not exit).
-2. Model Predicted 69% correct ( Precision > Recall is conservative)
-3. Model Predicted fewer - 38.8% (who actually exited)
-4. Closer to recall here, showing recall is the bottleneck.
+2. DummyClassifier not able to predict as it goes with the majority of the data
 
-### Made data more Balanced using SMOTE & class_weight='balanced' in Logistic Regression Model
-<img width="1222" height="497" alt="image" src="https://github.com/user-attachments/assets/41df7aa2-f5e9-44e8-adda-75efb5a927cc" />
+### Made data more Balanced using SMOTE & Strategy - 'stratified' in Dummy classifier Model
+<img width="747" height="523" alt="image" src="https://github.com/user-attachments/assets/71044e99-7589-465d-bb1f-93083b19c882" />
 
-## Observation - (class_weight='balanced') Better
-1. Accuracy got reduced to 75% as data got balanced
-2. Model Predicted 44% correct ( Not conservative)
-3. Model Predicted more customer who got exited - 74% (who actually exited)
+## Observation - (Strategy - 'stratified') Better
+1. Accuracy got reduced to 49% as data got balanced
+2. The model started predicting both classes, but since the dataset is imbalanced, accuracy alone doesn’t mean much.
+
+### Model Comparison [Logistic,KNN,Decision Tree,Random Forest,Gradient Boosting,AdaBoost,XGBoost]
+1. As the data is not balanced we are focussing on the best AUC value
+2. `DecisionTree`, `Randon Forest` , `Gradient Boosting` & `Adboost` all have an AUC Vlaue of `87%-88%`
+3. For Real work Problem `XGboost` is tried as well and it is has an AUV laue of `89%`
+
+ |              Model|  Accuracy  | Precision|   Recall  | F1-score| auc_value|  Train Time |
+ |-------------------|------------|----------|-----------|---------|----------|-------------|
+ | LogisticRegression|  0.835399  | 0.696235 | 0.388210  |0.498477 |  0.818049|    0.305593 |
+ |                KNN|  0.847517  | 0.673591 | 0.536161  |0.597070 |  0.829963|   20.130846 |
+ |      Decision Tree|  0.858121  | 0.728021 | 0.521495  |0.607690 |  0.873008|    0.357273 |
+ |      Random Forest|  0.850183  | 0.803625 | 0.382459  |0.518266 |  0.880979|    8.907527 |
+ |  Gradient Boosting|  0.866271  | 0.751435 | 0.545938  |0.632412 |  0.889899|   24.185884 |
+ |           AdaBoost|  0.860878  | 0.740387 | 0.523221  |0.613142 |  0.878964|    9.335133 |
+ |      XGBClassifier|  0.868058  | 0.747902 | 0.563911  |0.643004 |  0.891581|    5.106956 |
+
+
+
+<p align="center">
+  <b>Models with Confusion Matrix & ROC graph for classifier’s performance</b></br>
+  <b>DecisionTree, Randon Forest , Gradient Boosting & Adboost all have an AUC Vlaue of 87%-88%</b></br>
+  <b>XGboost the best among all the models</b>
+</p>
+
+![Logistic-Knn](https://github.com/user-attachments/assets/30e9a5ed-1f03-4df0-a09b-b240e318379a)
+![Decision-Random](https://github.com/user-attachments/assets/99f1dea9-2425-4dfe-b6c9-74a3f7649513)
+![Gradient-Adaboost](https://github.com/user-attachments/assets/521aa21c-9046-4da3-816e-b44793c72932)
+
+![XGBC](https://github.com/user-attachments/assets/86e443e3-c49e-4672-96f6-2283c5ecfd65)
+
+
+
