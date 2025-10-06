@@ -120,26 +120,28 @@ Output variable (desired target):
 2. The model started predicting both classes, but since the dataset is imbalanced, accuracy alone doesn’t mean much.
 
 ### Model Comparison [Logistic,KNN,Decision Tree,Random Forest,Gradient Boosting,AdaBoost,XGBoost]
-1. As the data is not balanced we are focussing on the best AUC value
+1. As the data is not balanced we are focussing on the best AUC value the model creates
 2. `DecisionTree`, `Randon Forest` , `Gradient Boosting` & `Adboost` all have an AUC Vlaue of `87%-88%`
-3. For Real work Problem `XGboost` is tried as well and it is has an AUV laue of `89%`
+3. SVM took the longest time to execute and it was ignored.
+4. For Real work Problem `XGboost` is tried as well and it is has an AUV laue of `89%`
 
  |              Model|  Accuracy  | Precision|   Recall  | F1-score| auc_value|  Train Time |
  |-------------------|------------|----------|-----------|---------|----------|-------------|
  | LogisticRegression|  0.835399  | 0.696235 | 0.388210  |0.498477 |  0.818049|    0.305593 |
  |                KNN|  0.847517  | 0.673591 | 0.536161  |0.597070 |  0.829963|   20.130846 |
  |      Decision Tree|  0.858121  | 0.728021 | 0.521495  |0.607690 |  0.873008|    0.357273 |
+ |                SVM|  0.862100  | 0.738143 | 0.523515  |0.607690 |  0.000000| 1064.110000 |
  |      Random Forest|  0.850183  | 0.803625 | 0.382459  |0.518266 |  0.880979|    8.907527 |
  |  Gradient Boosting|  0.866271  | 0.751435 | 0.545938  |0.632412 |  0.889899|   24.185884 |
  |           AdaBoost|  0.860878  | 0.740387 | 0.523221  |0.613142 |  0.878964|    9.335133 |
  |      XGBClassifier|  0.868058  | 0.747902 | 0.563911  |0.643004 |  0.891581|    5.106956 |
 
 
-
 <p align="center">
   <b>Models with Confusion Matrix & ROC graph for classifier’s performance</b></br>
-  <b>DecisionTree, Randon Forest , Gradient Boosting & Adboost all have an AUC Vlaue of 87%-88%</b></br>
-  <b>XGboost the best among all the models</b>
+  <b>DecisionTree, Randon Forest , Gradient Boosting & Adboost all have an AUC Vaue of 87%-88%</b></br>
+  <b>Neural Network model was tried as well </b></br>
+  <b>XGboost the best among all the models and stand out with an value of 89%</b>
 </p>
 
 ![Logistic-Knn](https://github.com/user-attachments/assets/30e9a5ed-1f03-4df0-a09b-b240e318379a)
@@ -148,5 +150,8 @@ Output variable (desired target):
 
 ![XGBC](https://github.com/user-attachments/assets/86e443e3-c49e-4672-96f6-2283c5ecfd65)
 
+### Hyperparameter Tuning for XGBC classifier
+1. The model was able to predict more True Positives & True Negatives
+<img width="558" height="796" alt="image" src="https://github.com/user-attachments/assets/6c257483-b081-439b-834f-13fe76cad02b" />
 
-
+### Business Impact
