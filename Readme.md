@@ -152,6 +152,37 @@ Output variable (desired target):
 
 ### Hyperparameter Tuning for XGBC classifier
 1. The model was able to predict more True Positives & True Negatives
+2. As the True Negatives is also increasing the model is trading precision for recall
+3. As Recall improves (miss fewer actual churners) which is good but on the flip slide we would be targeting people wouldnt leave.
+4. So further Analyis to see the business Impact with some assumptions.
+   
 <img width="558" height="796" alt="image" src="https://github.com/user-attachments/assets/6c257483-b081-439b-834f-13fe76cad02b" />
 
-### Business Impact
+### Business Impact $$$ Value for each model - Analysis
+1. Revenue per customer - $100 -- Revenue
+2. Marketing Expense ( Retention Cost) -$5 -- Cost
+3. Percentage of Customer will Stay based on the Marketing - (5%) --- Percentage
+4. Based on the above assumptions Impact on the model would be
+
+| Description       | Impact          | 
+|-------------------|-----------------|
+| TP - Gain         | (0.5* 100) -10  |
+| TN - No impact    | 0.0             |
+| FP - Loss         | $5 -PerCustomer |
+| FN - Loss         | $100-PerCustomer|
+ 
+### Conclusion - Business Impact $$$ Value for each model 
+
+| Model             |  Rentention%    | Profit-Margin  | 
+|-------------------|-----------------|----------------|
+|Logistic Regression|         0.5     | -309890.0      | 
+|Random Forest      |         0.5     | -313050.0      | 
+|Gradient Boosting  |         0.5     | -168215.0      | 
+|XGBoost            |         0.5     | -133420.0      |
+|XGBoost-hyperparam |         0.5     | -74100.0       | 
+
+1. In all the Models Based on the assumption the business is making loss.
+2. But the loss is getting reduced considerably.  
+3. It clear indicates that The impact of the business is only $74K when compared to in XGBoost which is $133K.
+4. **The best Model is XGBoost after hyper parameter Tuning.**
+    
