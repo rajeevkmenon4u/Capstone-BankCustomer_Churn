@@ -141,7 +141,7 @@ Output variable (desired target):
   <b>Models with Confusion Matrix & ROC graph for classifier’s performance</b></br>
   <b>DecisionTree, Randon Forest , Gradient Boosting & Adboost all have an AUC Vaue of 87%-88%</b></br>
   <b>Neural Network model was tried as well and results was similar to other models </b></br>
-  <b>XGboost the best among all the models and stand out with an value of 89%</b>
+  <b>XGboost the best among all the models and stands out with an value of 89%</b>
 </p>
 
 ![Logistic-Knn](https://github.com/user-attachments/assets/30e9a5ed-1f03-4df0-a09b-b240e318379a)
@@ -191,8 +191,9 @@ Output variable (desired target):
 
 1. In all the Models Based on the assumption the business is making loss.
 2. But the loss is getting reduced considerably.  
-3. It clear indicates the model **(XGBClassifier after Hyper parameter Tuning)** has the least impact only $74K loss when compared to other models.
+3. It clear indicates the model **(XGBClassifier after Hyper parameter Tuning)** has the least impact, only $74K loss when compared to other models.
 4. The second bgest model is **Gradient Boosting-after Hyper parameter Tuning** with $132K Loss.
-5. Logistic Regression with or with our Hyperparameter Tuning guves the same result.
-6. **The best Model is XGBoost after hyper parameter Tuning.**
+5. `XGBClassifier` comes thrid with out hyperparameter tuning as well with a loss of $133K.
+6. Logistic Regression with or with our Hyperparameter Tuning gives the same result.
+7. **The best Model is XGBoost after hyper parameter Tuning.**
     
