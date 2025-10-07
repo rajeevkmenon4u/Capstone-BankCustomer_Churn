@@ -120,10 +120,10 @@ Output variable (desired target):
 2. The model started predicting both classes, but since the dataset is imbalanced, accuracy alone doesn’t mean much.
 
 ### Model Comparison [Logistic,KNN,Decision Tree,Random Forest,Gradient Boosting,AdaBoost,XGBoost]
-1. As the data is not balanced we are focussing on the best AUC value the model creates
-2. `DecisionTree`, `Randon Forest` , `Gradient Boosting` & `Adboost` all have an AUC Vlaue of `87%-88%`
-3. SVM took the longest time to execute and it was ignored.
-4. For Real work Problem `XGboost` is tried as well and it is has an AUV laue of `89%`
+1. As the data is not balanced we are focussing on the best AUC value the model the generate
+2. `DecisionTree`, `Randon Forest` , `Gradient Boosting` & `Adboost` all have an AUC Value of `87%-88%`
+3. SVM took the longest time to execute, hence it was ignored for further analysis.
+4. As this is a Real work Problem `XGboost` is tried and it is has an AUV laue of `89%`
 
  |              Model|  Accuracy  | Precision|   Recall  | F1-score| auc_value|  Train Time |
  |-------------------|------------|----------|-----------|---------|----------|-------------|
@@ -140,7 +140,7 @@ Output variable (desired target):
 <p align="center">
   <b>Models with Confusion Matrix & ROC graph for classifier’s performance</b></br>
   <b>DecisionTree, Randon Forest , Gradient Boosting & Adboost all have an AUC Vaue of 87%-88%</b></br>
-  <b>Neural Network model was tried as well </b></br>
+  <b>Neural Network model was tried as well and results was similar to other models </b></br>
   <b>XGboost the best among all the models and stand out with an value of 89%</b>
 </p>
 
