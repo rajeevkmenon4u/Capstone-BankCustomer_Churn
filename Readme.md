@@ -173,16 +173,26 @@ Output variable (desired target):
  
 ### Conclusion - Business Impact $$$ Value for each model 
 
-| Model             |  Rentention%    | Profit-Margin  | 
-|-------------------|-----------------|----------------|
-|Logistic Regression|         0.5     | -309890.0      | 
-|Random Forest      |         0.5     | -313050.0      | 
-|Gradient Boosting  |         0.5     | -168215.0      | 
-|XGBoost            |         0.5     | -133420.0      |
-|XGBoost-hyperparam |         0.5     | -74100.0       | 
+|                       Model |   TN |  FP |  FN |  TP | Profit-Margin| 
+|-----------------------------|------|-----|-----|-----|--------------|
+|         XGBClassifier-Hyper | 24066| 1986| 2601| 4354|      -74100.0|
+|     Gradient Boosting-Hyper | 24694| 1358| 3024| 3931|     -132295.0|
+|               XGBClassifier | 24730| 1322| 3033| 3922|     -133420.0|
+|           Gradient Boosting | 24796| 1256| 3158| 3797|     -151215.0|
+|                         KNN | 24245| 1807| 3226| 3729|     -163830.0|
+|         Random Forest-Hyper | 24934| 1118| 3314| 3641|     -173145.0|
+|                    AdaBoost | 24776| 1276| 3316| 3639|     -174225.0|
+|               Decision Tree | 24697| 1355| 3328| 3627|     -176360.0|
+|              AdaBoost-Hyper | 24811| 1241| 3334| 3621|     -176660.0|
+|         Logistic Regression | 24874| 1178| 4255| 2700|     -309890.0|
+|   Logistic Regression-Hyper | 24874| 1178| 4255| 2700|     -309890.0|
+|               Random Forest | 25402|  650| 4295| 2660|     -313050.0|
+
 
 1. In all the Models Based on the assumption the business is making loss.
 2. But the loss is getting reduced considerably.  
-3. It clear indicates that The impact of the business is only $74K when compared to in XGBoost which is $133K.
-4. **The best Model is XGBoost after hyper parameter Tuning.**
+3. It clear indicates the model **(XGBClassifier after Hyper parameter Tuning)** has the least impact only $74K loss when compared to other models.
+4. The second bgest model is **Gradient Boosting-after Hyper parameter Tuning** with $132K Loss.
+5. Logistic Regression with or with our Hyperparameter Tuning guves the same result.
+6. **The best Model is XGBoost after hyper parameter Tuning.**
     
